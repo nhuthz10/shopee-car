@@ -1356,3 +1356,52 @@ i.home-product-item__like-icon-fill {
     text-align: center;
     color: #737373;
 }
+
+.footer__bottom-list {
+    list-style: none;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__bottom-item {
+    position: relative;
+    padding: 0 16px;
+}
+
+.footer__bottom-link {
+    text-decoration: none;
+    padding: 10px 8px;
+    color: #737373;
+    text-transform: uppercase;
+}
+
+.footer__bottom-item--separate::after {
+    content: "";
+    position: absolute;
+    height: 12px;
+    border-right: 1px solid #d5d5d5;
+    top: 1px;
+    right: 0;
+}
+
+.footer__bottom-body {
+    margin: 48px 0 32px 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #737373;
+}
+
+.footer__bottom-body-img {
+    width: 120px;
+}
+
+.footer__bottom-body-text {
+    margin: 12px 0;
+}
+
+.footer__bottom-footer {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #737373;
+}
