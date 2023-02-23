@@ -1,3 +1,7 @@
+.main {
+    overflow: hidden;
+}
+
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -161,6 +165,8 @@
 .header__logo-link {
     text-decoration: none;
     color: transparent;
+    display: block;
+    line-height: 0;
 }
 
 .header__navbar-icon-link:nth-child(2) {
@@ -276,7 +282,7 @@
 .header__notification-header {
     height: 40px;
     background-color: var(--white-color);
-    user-select: none;
+    /* user-select: none; */
 }
 
 .header__notification-header h3 {
@@ -726,6 +732,7 @@
     cursor: pointer;
     padding: 0 12px;
     display: inline-block;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-wrap:hover .header__cart-list {
@@ -790,7 +797,7 @@
 .header__cart-lists {
     padding-left: 0;
     list-style: none;
-    height: 50vh;
+    max-height: 50vh;
     overflow-y: auto;
 }
 
@@ -1137,8 +1144,8 @@
     margin: 10px 10px 6px;
     height: 3.6rem;
     overflow: hidden;
-    display: block;
     display: -webkit-box;
+    display: block;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
@@ -1282,6 +1289,7 @@ i.home-product-item__like-icon-fill {
 
 .home-product__pagiantion {
     margin: 48px 0 32px 0;
+    padding-left: 0;
 }
 
 .footer {
@@ -1305,7 +1313,6 @@ i.home-product-item__like-icon-fill {
     font-size: 1.2rem;
     color: #737373;
     padding: 8px 0;
-    display: block;
     display: flex;
     align-items: center;
 }
@@ -1362,6 +1369,7 @@ i.home-product-item__like-icon-fill {
     font-size: 1.4rem;
     display: flex;
     justify-content: center;
+    padding-left: 0;
 }
 
 .footer__bottom-item {
@@ -1374,14 +1382,17 @@ i.home-product-item__like-icon-fill {
     padding: 10px 8px;
     color: #737373;
     text-transform: uppercase;
+    display: flex;
+    text-align: center;
 }
 
 .footer__bottom-item--separate::after {
     content: "";
     position: absolute;
-    height: 12px;
+    height: 60%;
     border-right: 1px solid #d5d5d5;
-    top: 1px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
 }
 
@@ -1404,4 +1415,111 @@ i.home-product-item__like-icon-fill {
     text-align: center;
     font-size: 1.4rem;
     color: #737373;
+}
+
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: var(--white-color);
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: none;
+}
+
+.header__sort-item {
+    flex: 1;
+    position: relative;
+}
+
+.header__sort-link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+}
+
+.header__sort-item:first-child .header__sort-link::after {
+    display: none;
+}
+
+.header__sort-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 46px;
+}
+
+.header-mobile-search {
+    padding: 0 12px;
+    display: none;
+}
+
+.header-mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
+.mobile-category {
+    display: none;
+}
+
+.mobile-category__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.mobile-category__item:nth-of-type(3n) .mobile-category__link {
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n+1) .mobile-category__link {
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n+2) .mobile-category__link {
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n+3) .mobile-category__link {
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    display: block;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: 4rem;
+    text-align: center;
+    width: 108px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 300;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    padding: 0 6px;
 }
